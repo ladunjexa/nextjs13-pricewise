@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Modal = ({ productId }: Props) => {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
 

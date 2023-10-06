@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { scrapeAndStoreProduct } from "@/lib/actions";
 
@@ -26,6 +27,7 @@ const isValidAmazonProductURL = (url: string): boolean => {
 };
 
 const Searchbar = () => {
+  const router = useRouter();
   const [searchPrompt, setSearchPrompt] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -42,8 +44,12 @@ const Searchbar = () => {
       setIsLoading(true);
 
       // Scrape the product page
-      // eslint-disable-next-line no-unused-vars
       const product = await scrapeAndStoreProduct(searchPrompt);
+
+      // Redirect to the product page if successful
+      if (product) {
+        router.push(`/products/${product}`);
+      }
     } catch (error) {
       console.log(error);
     } finally {
