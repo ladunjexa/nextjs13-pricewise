@@ -1,7 +1,8 @@
 "use client";
 
-import { scrapeAndStoreProduct } from "@/lib/actions";
 import React, { useState } from "react";
+
+import { scrapeAndStoreProduct } from "@/lib/actions";
 
 const isValidAmazonProductURL = (url: string): boolean => {
   try {
