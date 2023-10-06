@@ -42,6 +42,7 @@ const Searchbar = () => {
       setIsLoading(true);
 
       // Scrape the product page
+      // eslint-disable-next-line no-unused-vars
       const product = await scrapeAndStoreProduct(searchPrompt);
     } catch (error) {
       console.log(error);
