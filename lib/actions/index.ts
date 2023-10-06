@@ -25,17 +25,17 @@ export async function scrapeAndStoreProduct(productUrl: string) {
     const existingProduct = await Product.findOne({ url: scrapedProduct.url });
 
     if (existingProduct) {
-      const updatePriceHistory: any = [
+      const updatedPriceHistory: any = [
         ...existingProduct.priceHistory,
         { price: scrapedProduct.currentPrice },
       ];
 
       product = {
         ...scrapedProduct,
-        priceHistory: updatePriceHistory,
-        lowestPrice: getLowestPrice(updatePriceHistory),
-        highestPrice: getHighestPrice(updatePriceHistory),
-        averagePrice: getAveragePrice(updatePriceHistory),
+        priceHistory: updatedPriceHistory,
+        lowestPrice: getLowestPrice(updatedPriceHistory),
+        highestPrice: getHighestPrice(updatedPriceHistory),
+        averagePrice: getAveragePrice(updatedPriceHistory),
       };
     }
 
@@ -71,7 +71,7 @@ export async function getAllProducts() {
   try {
     connectToDB();
 
-    const products = await Product.find();
+    const products = await Product.find({});
 
     if (!products) return null;
 
