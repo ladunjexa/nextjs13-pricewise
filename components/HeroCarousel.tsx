@@ -34,6 +34,14 @@ const HeroCarousel = () => {
           />
         ))}
       </Carousel>
+
+      <Image
+        src="assets/icons/hand-drawn-arrow.svg"
+        width={175}
+        height={175}
+        alt="arrow"
+        className="absolute bottom-0 left-[-15%] z-0 max-xl:hidden"
+      />
     </div>
   );
 };
