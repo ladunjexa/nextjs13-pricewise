@@ -1,10 +1,13 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+
+import Searchbar from "@/components/Searchbar";
+import HeroCarousel from "@/components/HeroCarousel";
 
 const Home = () => {
   return (
     <>
-      <section className="border-2 border-red-500 px-6 py-24 md:px-20">
+      <section className="border-2 px-6 py-24 md:px-20">
         <div className="flex gap-16 max-xl:flex-col">
           <div className="flex flex-col justify-center">
             <p className="small-text">
@@ -24,9 +27,11 @@ const Home = () => {
               Powerful, self-serve products and growth analytics to help you
               convert, engage, and retain more.
             </p>
-            Searchbar
+
+            <Searchbar />
           </div>
-          HeroCarousel
+
+          <HeroCarousel />
         </div>
       </section>
 

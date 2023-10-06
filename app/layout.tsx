@@ -1,10 +1,14 @@
+import React from "react";
 import "./globals.css";
 import type { Metadata } from "next";
+// eslint-disable-next-line camelcase
 import { Inter, Space_Grotesk } from "next/font/google";
 
 import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
+
+// eslint-disable-next-line no-unused-vars
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -23,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="max-w-10xl mx-auto">
+        <main className="mx-auto max-w-10xl">
           <Navbar />
           {children}
         </main>
