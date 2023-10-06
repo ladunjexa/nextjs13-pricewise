@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 
 import PriceInfoCard from "@/components/PriceInfoCard";
 import ProductCard from "@/components/ProductCard";
+import Modal from "@/components/Modal";
 
 import { getProductById, getSimilarProducts } from "@/lib/actions";
 import { formatNumber } from "@/lib/utils";
@@ -22,6 +23,7 @@ const ProductDetails = async ({ params: { id } }: Props) => {
   }
 
   const similarProducts = await getSimilarProducts(id);
+
   return (
     <div className="product-container">
       <div className="flex flex-col gap-28 xl:flex-row">
@@ -161,7 +163,7 @@ const ProductDetails = async ({ params: { id } }: Props) => {
               />
             </div>
           </div>
-          Modal
+          <Modal />
         </div>
       </div>
 
