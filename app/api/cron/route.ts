@@ -30,9 +30,7 @@ export async function GET(request: Request) {
       products.map(async (currentProduct) => {
         const scrapedProduct = await scrapeAmazonProduct(currentProduct.url);
 
-        if (!scrapedProduct) {
-          throw new Error("Error scraping product");
-        }
+        if (!scrapedProduct) return;
 
         const updatedPriceHistory: any = [
           ...currentProduct.priceHistory,
