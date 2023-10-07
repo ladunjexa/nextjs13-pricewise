@@ -1,3 +1,4 @@
+import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 
 import Product from "@/lib/models/Product.model";
@@ -15,7 +16,7 @@ export const maxDuration = 10;
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export async function GET() {
+export async function GET(request: NextApiRequest) {
   try {
     connectToDB();
 
