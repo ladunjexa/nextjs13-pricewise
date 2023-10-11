@@ -7,7 +7,6 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
-
 // eslint-disable-next-line no-unused-vars
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
