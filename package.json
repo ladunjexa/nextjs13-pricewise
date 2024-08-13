@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
-    "axios": "^1.6.7",
+    "axios": "^1.7.4",
     "cheerio": "^1.0.0-rc.12",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.1.0",
